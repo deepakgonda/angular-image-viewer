@@ -1,3 +1,4 @@
+
 # AngularImageViewer
 
 A configurable Angular image viewer component, compatible with Angular 7.x+ 
@@ -16,13 +17,13 @@ A configurable Angular image viewer component, compatible with Angular 7.x+
 To use default configuration, simply import the ImageViewerModule into your module, like so:
 
 ```javascript
-import { ImageViewerModule } from "ngx-image-viewer";
+import { AngularImageViewerModule } from "ngx-image-viewer";
 
 @NgModule({
   //...
   imports: [
     //...
-    ImageViewerModule.forRoot()
+    AngularImageViewerModule.forRoot()
   ],
   //...
 })
@@ -31,7 +32,7 @@ import { ImageViewerModule } from "ngx-image-viewer";
 Then, add the component to your template, providing an array of image URLs. You can also optionally add an index, to indicate which image should be shown first. The default will be the first item in the array.
 
 ```html
-<ngx-image-viewer  [src]="images" [(index)]="imageIndex"></ngx-image-viewer>
+<angular-image-viewer  [src]="images" [(index)]="imageIndex"></angular-image-viewer>
 ```
 
 By default, the image viewer will fill its container. If you wish to restrict the size, simply place it within a div, and set the size constraints on the div.
@@ -75,10 +76,10 @@ The configuration object is structured as below. All values are optional, and if
 To add additional buttons use the following 
 
 ```html 
-<ngx-image-viewer [src]="images" 
+<angular-image-viewer [src]="images" 
                   [config]="{customBtns:[{name: 'link', icon: 'fa fa-paperclip'}]}"
                   (customImageEvent)="handleEvent($event)">
-</ngx-image-viewer>
+</angular-image-viewer>
 ```
 
 ```javascript

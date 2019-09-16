@@ -1,0 +1,29 @@
+{
+  "name": "angular-image-viewer",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deepakgonda/angular-image-viewer.git"
+  },
+  "author": "Deepak Pandey <deepakpandeygonda@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "@angular/common": "^8.2.5",
+    "@angular/core": "^8.2.5",
+    "font-awesome": "^4.7.0",
+    "screenfull": "^5.0.0"
+  },
+  "keywords": [
+    "ngx-image-viewer",
+    "angular-image-viewer",
+    "image-loader",
+    "image-fullscreen",
+    "loader",
+    "image",
+    "angular-image",
+    "ngx-image",
+    "Angular Image Viewer",
+    "Angular Image Loader"
+  ]
+}

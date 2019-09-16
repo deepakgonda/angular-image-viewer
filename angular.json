@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-image-viewer": {
+    "ngx-image-viewer": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -12,12 +12,12 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "ngx",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-image-viewer",
+            "outputPath": "dist/ngx-image-viewer",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-image-viewer:build"
+            "browserTarget": "ngx-image-viewer:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-image-viewer:build:production"
+              "browserTarget": "ngx-image-viewer:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-image-viewer:build"
+            "browserTarget": "ngx-image-viewer:build"
           }
         },
         "test": {
@@ -115,15 +115,51 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-image-viewer:serve"
+            "devServerTarget": "ngx-image-viewer:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-image-viewer:serve:production"
+              "devServerTarget": "ngx-image-viewer:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "angular-image-viewer"
+    },
+    "angular-image-viewer": {
+      "projectType": "library",
+      "root": "projects/angular-image-viewer",
+      "sourceRoot": "projects/angular-image-viewer/src",
+      "prefix": "angular",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-image-viewer/tsconfig.lib.json",
+            "project": "projects/angular-image-viewer/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-image-viewer/src/test.ts",
+            "tsConfig": "projects/angular-image-viewer/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-image-viewer/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-image-viewer/tsconfig.lib.json",
+              "projects/angular-image-viewer/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-image-viewer"
 }
