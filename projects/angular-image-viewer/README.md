@@ -1,5 +1,5 @@
 
-# AngularImageViewer
+# Angular X Image Viewer
 
 A configurable Angular image viewer component, compatible with Angular 7.x+ 
 
@@ -17,13 +17,13 @@ A configurable Angular image viewer component, compatible with Angular 7.x+
 To use default configuration, simply import the ImageViewerModule into your module, like so:
 
 ```javascript
-import { AngularImageViewerModule } from "ngx-image-viewer";
+import { AngularImageViewerModule } from "angular-image-viewer";
 
 @NgModule({
   //...
   imports: [
     //...
-    AngularImageViewerModule.forRoot()
+    AngularImageViewerModule
   ],
   //...
 })
