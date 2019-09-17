@@ -19,10 +19,10 @@
       "dom"
     ],
     "paths": {
-      "angular-image-viewer": [
+      "angular-x-image-viewer": [
         "dist/angular-image-viewer"
       ],
-      "angular-image-viewer/*": [
+      "angular-x-image-viewer/*": [
         "dist/angular-image-viewer/*"
       ]
     }

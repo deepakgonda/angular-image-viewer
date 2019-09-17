@@ -4,20 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularImageViewerComponent } from './angular-image-viewer.component';
-import { ScreenfullDirective } from './directives/screenfull.directive';
+import { FullScreenDirective } from './directives/full-screen.directive';
 // import { ImageViewerConfig } from 'dist/angular-image-viewer/public-api';
 
 
 
 @NgModule({
-  declarations: [AngularImageViewerComponent, ScreenfullDirective],
+  declarations: [AngularImageViewerComponent, FullScreenDirective],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
   ],
-  exports: [AngularImageViewerComponent , ScreenfullDirective]
+  exports: [AngularImageViewerComponent, FullScreenDirective]
 })
 export class AngularImageViewerModule {
   /**
@@ -35,4 +35,4 @@ export class AngularImageViewerModule {
   //     ]
   //   };
   // }
- }
+}

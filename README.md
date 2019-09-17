@@ -17,7 +17,7 @@ A configurable Angular image viewer component, compatible with Angular 7.x+
 To use default configuration, simply import the ImageViewerModule into your module, like so:
 
 ```javascript
-import { AngularImageViewerModule } from "angular-image-viewer";
+import { AngularImageViewerModule } from "angular-x-image-viewer";
 
 @NgModule({
   //...
@@ -94,6 +94,6 @@ handleEvent(event: customImageEvent) {
 }
 ```
 
-Note: This package is built using the idea & code from ngx-image-viewer(https://github.com/jpilfold/ngx-image-viewer). It has advantage that it uses latest dependencies which fixes Issue #23 & #29  
+Note: This package is built using the idea from ngx-image-viewer(https://github.com/jpilfold/ngx-image-viewer). It has advantage that it uses latest dependencies which fixes Issue #23 & #29  i.e related to FullScreen Image. 
 
 
