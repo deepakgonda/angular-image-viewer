@@ -8,8 +8,8 @@
   "author": "Deepak Pandey <deepakpandeygonda@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^8.2.5",
-    "@angular/core": "^8.2.5",
+    "@angular/common": "^9.0.0",
+    "@angular/core": "^9.0.0",
     "font-awesome": "^4.7.0"
   },
   "keywords": [
