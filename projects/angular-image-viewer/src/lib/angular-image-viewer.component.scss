@@ -1,33 +1,33 @@
 .img-container {
-  height: 100%;
-  width: 100%;
+  height: 85vh;
+  width: 85vw;
   overflow: hidden;
   position: relative;
 
   & img {
-      z-index: 2;
-      margin: 0 auto;
-      display: block;
-      max-width: 100%;
-      max-height: 100%;
-      width: 100%;
+    z-index: 2;
+    margin: 0 auto;
+    display: block;
+    max-width: 98vw;
+    max-height: 90vh;
+    width: 100%;
   }
 
   & button {
-      z-index: 99;
-      position: absolute;
-      right: 15px;
+    z-index: 99;
+    position: absolute;
+    right: 15px;
 
-      &:not(:disabled) {
-          cursor: pointer;
-      }
+    &:not(:disabled) {
+      cursor: pointer;
+    }
   }
 
 }
 
 @for $i from 1 through 7 {
   .img-container>button:nth-of-type(#{$i}):not(#ngx-fs-btn) {
-      bottom: 15px + (50px * ($i - 1))
+    bottom: 15px + (50px * ($i - 1))
   }
 }
 
@@ -103,40 +103,40 @@ button.default:disabled {
 
 @keyframes rotation {
   from {
-      -webkit-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
   }
 
   to {
-      -webkit-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
   }
 }
 
 @-webkit-keyframes rotation {
   from {
-      -webkit-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
   }
 
   to {
-      -webkit-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
   }
 }
 
 @-moz-keyframes rotation {
   from {
-      -webkit-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
   }
 
   to {
-      -webkit-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
   }
 }
 
 @-o-keyframes rotation {
   from {
-      -webkit-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
   }
 
   to {
-      -webkit-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
   }
 }

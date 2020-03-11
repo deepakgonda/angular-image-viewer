@@ -94,6 +94,6 @@ handleEvent(event: customImageEvent) {
 }
 ```
 
-Note: This package is built using the idea from ngx-image-viewer(https://github.com/jpilfold/ngx-image-viewer). It has advantage that it uses latest dependencies which fixes Issue #23 & #29  i.e related to FullScreen Image.
+Note: This package is built using the idea from ngx-image-viewer(https://github.com/jpilfold/ngx-image-viewer). It has advantage that it uses latest dependencies which fixes Issue #23 & #29  i.e related to FullScreen Image. 
 
 
