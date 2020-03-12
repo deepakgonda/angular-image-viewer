@@ -10,7 +10,10 @@ import { ImageViewerConfig, CustomImageEvent } from 'angular-x-image-viewer';
 export class AppComponent {
   title = 'angular-image-viewer';
   images = [
-    `https://sls-app-resources-bucket.s3.us-east-2.amazonaws.com/temp/16M.jpg?q=1`,
+    `https://sls-app-resources-bucket.s3.us-east-2.amazonaws.com/temp/1.2M.png?q=${1}`,
+    `https://sls-app-resources-bucket.s3.us-east-2.amazonaws.com/temp/520K.png?q=${2}`,
+    `https://sls-app-resources-bucket.s3.us-east-2.amazonaws.com/temp/43.6K.png?q=${3}`,
+    `https://sls-app-resources-bucket.s3.us-east-2.amazonaws.com/temp/16M.jpg?q=${4}`,
     'https://i.ytimg.com/vi/nlYlNF30bVg/hqdefault.jpg',
     'https://www.askideas.com/media/10/Funny-Goat-Closeup-Pouting-Face.jpg'
   ];
