@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "serve-lib": "ng build ngx-image-viewer --watch"
+    "serve-lib": "ng build angular-image-viewer --watch"
   },
   "private": true,
   "dependencies": {

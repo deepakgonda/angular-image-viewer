@@ -1,7 +1,8 @@
-<div [appScreenfull]="fullscreen" class="img-container" [style.backgroundColor]="config.containerBackgroundColor"
-    (wheel)="scrollZoom($event)" (dragover)="onDragOver($event)">
+<div [appScreenfull]="fullscreen" class="img-container" [style.height]="styleHeight"
+    [style.backgroundColor]="config.containerBackgroundColor" (wheel)="scrollZoom($event)"
+    (dragover)="onDragOver($event)">
     <img [src]="src[index]" [ngStyle]="style" alt="Image not found..." (dragstart)="onDragStart($event)"
-        (load)="onLoad(src[index])" (error)="imageNotFound(src[index])"  (loadstart)="onLoadStart(src[index])" />
+        (load)="onLoad(src[index])" (error)="imageNotFound(src[index])" (loadstart)="onLoadStart(src[index])" />
     <!-- Div below will be used to hide the 'ghost' image when dragging -->
     <div></div>
     <div class="spinner-container" *ngIf="loading">
@@ -37,7 +38,8 @@
         <button type="button" [class]="config.btnClass" (click)="prevImage($event)" [disabled]="index === 0">
             <span [class]="config.btnIcons.prev"></span>
         </button>
-        <button type="button" [class]="config.btnClass" (click)="nextImage($event)" [disabled]="index === src.length - 1">
+        <button type="button" [class]="config.btnClass" (click)="nextImage($event)"
+            [disabled]="index === src.length - 1">
             <span [class]="config.btnIcons.next"></span>
         </button>
     </div>

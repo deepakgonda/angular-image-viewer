@@ -1,6 +1,7 @@
-import { Component, OnInit, HostListener, Optional, Inject, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, HostListener, Optional, Inject, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { ImageViewerConfig } from './models/image-viewer-config.model';
 import { CustomImageEvent } from './models/custom-image-event-model';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 const DEFAULT_CONFIG: ImageViewerConfig = {
@@ -35,10 +36,13 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
   templateUrl: './angular-image-viewer.component.html',
   styleUrls: ['./angular-image-viewer.component.scss']
 })
-export class AngularImageViewerComponent implements OnInit {
+export class AngularImageViewerComponent implements OnInit, OnChanges {
 
   @Input()
   src: string[];
+
+  @Input()
+  screenHeightOccupied: 0;             // In Px
 
   @Input()
   index = 0;
@@ -55,6 +59,8 @@ export class AngularImageViewerComponent implements OnInit {
   @Output()
   customImageEvent: EventEmitter<CustomImageEvent> = new EventEmitter();
 
+  styleHeight = '98vh';
+
   public style = { transform: '', msTransform: '', oTransform: '', webkitTransform: '' };
   public fullscreen = false;
   public loading = true;
@@ -66,7 +72,15 @@ export class AngularImageViewerComponent implements OnInit {
   private prevY: number;
   private hovered = false;
 
-  constructor(@Optional() @Inject('config') public moduleConfig: ImageViewerConfig) { }
+  constructor(@Optional() @Inject('config') public moduleConfig: ImageViewerConfig,
+              private sanitizer: DomSanitizer) { }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.screenHeightOccupied) {
+      this.styleHeight = 'calc(98vh - ' + this.screenHeightOccupied + 'px)';
+      console.log('Style Height:', this.styleHeight);
+    }
+  }
 
   ngOnInit() {
     const merged = this.mergeConfig(DEFAULT_CONFIG, this.moduleConfig);
