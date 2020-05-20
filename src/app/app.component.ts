@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ImageViewerConfig, CustomImageEvent } from 'angular-x-image-viewer';
+import { ImageViewerConfig, CustomImageEvent } from '@hreimer/angular-image-viewer';
 
 
 @Component({
@@ -7,6 +7,7 @@ import { ImageViewerConfig, CustomImageEvent } from 'angular-x-image-viewer';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   title = 'angular-image-viewer';
   images = [
@@ -20,10 +21,70 @@ export class AppComponent {
 
   imageIndexOne = 0;
 
-  config: ImageViewerConfig = { customBtns: [{ name: 'print', icon: 'fa fa-print' }, { name: 'link', icon: 'fa fa-link' }] };
+  config: ImageViewerConfig = {
+      btnContainerClass: 'other',
+      btnClass: 'btn btn-hover-primary px-1',
+      btnSubClass: 'material-icons font-size-xl',
+      zoomFactor: 0.1,
+      containerBackgroundColor: '#ccc',
+      wheelZoom: false,
+      allowFullscreen: true,
+      allowKeyboardNavigation: true,
+      btnShow: {
+        zoomIn: true,
+        zoomOut: true,
+        rotateClockwise: true,
+        rotateCounterClockwise: true,
+        next: false,
+        prev: false,
+        reset: true
+      },
+      btnIcons: {
+        zoomIn: {
+          text: 'zoom_in'
+        },
+        zoomOut: {
+          text: 'zoom_out'
+        },
+        rotateClockwise:  {
+          text: 'rotate_right'
+        },
+        rotateCounterClockwise:  {
+          text: 'rotate_left'
+        },
+        next:  {
+          text: 'arrow_right'
+        },
+        prev:  {
+          text: 'arrow_left'
+        },
+        fullscreen:  {
+          text: 'fullscreen'
+        },
+        reset:  {
+          text: 'restore'
+        },
+    },
+    customBtns: [
+      {
+        name: 'print',
+        icon:
+          {
+            text: 'print'
+          }
+      },
+      {
+        name: 'link',
+        icon:
+        {
+          text: 'link'
+        }
+      }
+    ]
+  };
 
   handleEvent(event: CustomImageEvent) {
-    console.log(`${event.name} has been click on img ${event.imageIndex + 1}`);
+    console.log(`${event.name} has been clicked on img ${event.imageIndex + 1}`);
 
     switch (event.name) {
       case 'print':

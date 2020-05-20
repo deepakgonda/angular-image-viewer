@@ -1,23 +1,29 @@
 
-# Angular X Image Viewer
+# Angular Image Viewer
 
-A configurable Angular image viewer component, compatible with Angular 7.x+ 
+A configurable Angular image viewer component, compatible with Angular 9.x+ 
 
 ## Features:
- * Compatible with Angular 7.x+
+ * Compatible with Angular 9.x+
  * Configurable
  * Rotate image
  * Zoom image
  * Drag to move image
  * Toggle Full Screen mode
+ * Reset Image after rotating/zooming/dragging
 
+## Install
+
+``` npm install @hreimer/angular-image-viewer ```
+
+Note: Refer to the official links how to set-up your app if you want to use FontAwesome Icons (https://github.com/FortAwesome/angular-fontawesome) or Material Icons (https://material.angular.io/guide/getting-started).
 
 ## Set up
 
 To use default configuration, simply import the ImageViewerModule into your module, like so:
 
 ```javascript
-import { AngularImageViewerModule } from "angular-x-image-viewer";
+import { AngularImageViewerModule } from "@hreimer/angular-image-viewer";
 
 @NgModule({
   //...
@@ -47,28 +53,56 @@ The configuration object is structured as below. All values are optional, and if
 
 ```javascript
 {
-  btnClass: 'default', // The CSS class(es) that will apply to the buttons
-  zoomFactor: 0.1, // The amount that the scale will be increased by
+  btnContainerClass: '',            // The CSS class(es) to be applied to the button container
+  btnClass: 'default',              // The CSS class(es) that will be applied to the buttons e.g. default is needed for FontAwesome icons, while not needed for Material Icons
+  btnSubClass: 'material-icons',    // The CSS class(es) that will be applied to span elements inside material buttons (a Elements)
+  zoomFactor: 0.1,                  // The amount that the scale will be increased by
   containerBackgroundColor: '#ccc', // The color to use for the background. This can provided in hex, or rgb(a).
-  wheelZoom: true, // If true, the mouse wheel can be used to zoom in
-  allowFullscreen: true, // If true, the fullscreen button will be shown, allowing the user to enter fullscreen mode
-  allowKeyboardNavigation: true, // If true, the left / right arrow keys can be used for navigation
-  btnIcons: { // The icon classes that will apply to the buttons. By default, font-awesome is used.
-    zoomIn: 'fa fa-plus',
-    zoomOut: 'fa fa-minus',
-    rotateClockwise: 'fa fa-repeat',
-    rotateCounterClockwise: 'fa fa-undo',
-    next: 'fa fa-arrow-right',
-    prev: 'fa fa-arrow-left',
-    fullscreen: 'fa fa-arrows-alt',
-  },
-  btnShow: {
+  wheelZoom: true,                  // If true, the mouse wheel can be used to zoom in
+  allowFullscreen: true,            // If true, the fullscreen button will be shown, allowing the user to enter fullscreen mode
+  allowKeyboardNavigation: true,    // If true, the left / right arrow keys can be used for navigation
+  btnShow: {                        // Control which icons should be visible                
     zoomIn: true,
     zoomOut: true,
     rotateClockwise: true,
     rotateCounterClockwise: true,
     next: true,
-    prev: true
+    prev: true,
+    reset: true
+  },
+  btnIcons: {                       // The icon classes that will apply to the buttons. By default, font-awesome is used.
+    zoomIn: {
+      classes: 'fa fa-plus',        // this property will be used for FontAwesome and other libraries to set the icons via the classes - choose one: classes or text
+      text: 'zoom_in'               // this property will be used for Material-Icons and similar libraries to set the icons via the text
+    },
+    zoomOut: {
+      classes: 'fa fa-minus',
+      text: 'zoom_out'
+    },
+    rotateClockwise:  {
+      classes: 'fa fa-repeat',
+      text: 'rotate_right'
+    },
+    rotateCounterClockwise:  {
+      classes: 'fa fa-undo',
+      text: 'rotate_left'
+    },
+    next:  {
+      classes: 'fa fa-arrow-right',
+      text: 'arrow_right'
+    },
+    prev:  {
+      classes: 'fa fa-arrow-left',
+      text: 'arrow_left'
+    },
+    fullscreen:  {
+      classes: 'fa fa-arrows-alt',
+      text: 'fullscreen'
+    },
+    reset:  {
+      classes: 'fa fa-undo',
+      text: 'restore'
+    }
   }
 };
 ```
@@ -77,14 +111,24 @@ To add additional buttons use the following
 
 ```html 
 <angular-image-viewer [src]="images" 
-                  [config]="{customBtns:[{name: 'link', icon: 'fa fa-paperclip'}]}"
+                  [config]="{
+                    customBtns: [
+                      {
+                        name: 'link',
+                        icon: {
+                          classes: 'fa fa-paperclip',
+                          text: 'link'
+                        }
+                      }
+                    ]
+                  }"
                   (customImageEvent)="handleEvent($event)">
 </angular-image-viewer>
 ```
 
 ```javascript
 handleEvent(event: customImageEvent) {
-    console.log(`${event.name} has been click on img ${event.imageIndex + 1}`);
+    console.log(`${event.name} has been clicked on img ${event.imageIndex + 1}`);
 
     switch (event.name) {
       case 'print':
@@ -94,6 +138,4 @@ handleEvent(event: customImageEvent) {
 }
 ```
 
-Note: This package is built using the idea from ngx-image-viewer(https://github.com/jpilfold/ngx-image-viewer). It has advantage that it uses latest dependencies which fixes Issue #23 & #29  i.e related to FullScreen Image. 
-
-
+Note: This package builts on the idea from angular-x-image-viewer (https://github.com/deepakgonda/angular-image-viewer) and adds support for Material Icons as well as introduces a Reset Button and structures the buttons horizontally in another customisable container.

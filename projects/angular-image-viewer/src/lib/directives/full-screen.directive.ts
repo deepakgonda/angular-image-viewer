@@ -11,8 +11,8 @@ export class FullScreenDirective implements OnChanges, OnInit {
   constructor(private el: ElementRef) { }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('fullscreenState isFirstChange:', changes["fullscreenState"].isFirstChange());
-    console.log('fullscreenState', this.fullscreenState);
+    // console.log('fullscreenState isFirstChange:', changes["fullscreenState"].isFirstChange());
+    // console.log('fullscreenState', this.fullscreenState);
     // if (screenfull.isEnabled) {
     //   screenfull.toggle(this.el.nativeElement);
     // }

@@ -19,10 +19,10 @@
       "dom"
     ],
     "paths": {
-      "angular-x-image-viewer": [
+      "@hreimer/angular-image-viewer": [
         "dist/angular-image-viewer"
       ],
-      "angular-x-image-viewer/*": [
+      "@hreimer/angular-image-viewer/*": [
         "dist/angular-image-viewer/*"
       ]
     }

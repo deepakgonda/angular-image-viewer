@@ -5,7 +5,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 
 const DEFAULT_CONFIG: ImageViewerConfig = {
+  btnContainerClass: 'btn-container',
   btnClass: 'default',
+  btnSubClass: 'material-icons',
   zoomFactor: 0.1,
   containerBackgroundColor: '#ccc',
   wheelZoom: false,
@@ -17,16 +19,42 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
     rotateClockwise: true,
     rotateCounterClockwise: true,
     next: true,
-    prev: true
+    prev: true,
+    reset: true
   },
   btnIcons: {
-    zoomIn: 'fa fa-plus',
-    zoomOut: 'fa fa-minus',
-    rotateClockwise: 'fa fa-repeat',
-    rotateCounterClockwise: 'fa fa-undo',
-    next: 'fa fa-arrow-right',
-    prev: 'fa fa-arrow-left',
-    fullscreen: 'fa fa-arrows-alt',
+    zoomIn: {
+      classes: 'fa fa-plus',
+      text: 'zoom_in'
+    },
+    zoomOut: {
+      classes: 'fa fa-minus',
+      text: 'zoom_out'
+    },
+    rotateClockwise:  {
+      classes: 'fa fa-repeat',
+      text: 'rotate_right'
+    },
+    rotateCounterClockwise:  {
+      classes: 'fa fa-undo',
+      text: 'rotate_left'
+    },
+    next:  {
+      classes: 'fa fa-arrow-right',
+      text: 'arrow_right'
+    },
+    prev:  {
+      classes: 'fa fa-arrow-left',
+      text: 'arrow_left'
+    },
+    fullscreen:  {
+      classes: 'fa fa-arrows-alt',
+      text: 'fullscreen'
+    },
+    reset:  {
+      classes: 'fa fa-undo',
+      text: 'restore'
+    },
   }
 };
 
@@ -59,7 +87,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   @Output()
   customImageEvent: EventEmitter<CustomImageEvent> = new EventEmitter();
 
-  styleHeight = '98vh';
+  styleHeight = '100%';
 
   public style = { transform: '', msTransform: '', oTransform: '', webkitTransform: '' };
   public fullscreen = false;
@@ -77,7 +105,7 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.screenHeightOccupied) {
-      this.styleHeight = 'calc(98vh - ' + this.screenHeightOccupied + 'px)';
+      this.styleHeight = 'calc(100% - ' + this.screenHeightOccupied + 'px)';
       // console.log('Style Height:', this.styleHeight);
     }
   }
@@ -138,17 +166,17 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   }
 
   onLoad(url) {
-    console.log('Loading Image Done:', url);
+    // console.log('Loading Image Done:', url);
     this.loading = false;
   }
 
   onLoadStart(url) {
-    console.log('Loading Image:', url);
+    // console.log('Loading Image:', url);
     this.loading = true;
   }
 
   imageNotFound(url) {
-    console.log('Image not found Url:', url);
+    // console.log('Image not found Url:', url);
   }
 
   onDragOver(evt) {

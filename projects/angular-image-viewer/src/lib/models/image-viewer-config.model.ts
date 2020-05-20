@@ -1,5 +1,7 @@
 export interface ImageViewerConfig {
+    btnContainerClass?: string;
     btnClass?: string;
+    btnSubClass?: string;
     zoomFactor?: number;
     containerBackgroundColor?: string;
     wheelZoom?: boolean;
@@ -13,20 +15,30 @@ export interface ImageViewerConfig {
         rotateCounterClockwise?: boolean;
         next?: boolean;
         prev?: boolean;
+        reset?: boolean;
     };
 
     btnIcons?: {
-        zoomIn?: string;
-        zoomOut?: string;
-        rotateClockwise?: string;
-        rotateCounterClockwise?: string;
-        next?: string;
-        prev?: string;
-        fullscreen?: string;
+        zoomIn?: MultiBtn['btn'];
+        zoomOut?: MultiBtn['btn'];
+        rotateClockwise?: MultiBtn['btn'];
+        rotateCounterClockwise?: MultiBtn['btn'];
+        next?: MultiBtn['btn'];
+        prev?: MultiBtn['btn'];
+        fullscreen?: MultiBtn['btn'];
+        reset?: MultiBtn['btn'];
     };
 
     customBtns?: Array<{
         name: string;
-        icon: string;
+        icon: MultiBtn['btn'];
     }>;
+
+}
+
+interface MultiBtn {
+    btn: {
+        classes?: string,
+        text?: string
+    };
 }
