@@ -1,6 +1,6 @@
 {
   "name": "angular-image-viewer",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -51,5 +51,17 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.7.5"
-  }
+  },
+  "description": "A configurable Angular image viewer component, compatible with Angular 7.x+",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdimatteo/angular-image-viewer.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kdimatteo/angular-image-viewer/issues"
+  },
+  "homepage": "https://github.com/kdimatteo/angular-image-viewer#readme"
 }
