@@ -1,4 +1,4 @@
-<div [appScreenfull]="fullscreen" class="img-container" [style.height]="styleHeight"
+<div [appScreenfull]="fullscreen" class="img-container"
     [style.backgroundColor]="config.containerBackgroundColor" (wheel)="scrollZoom($event)"
     (dragover)="onDragOver($event)">
     <img [src]="src[index]" [ngStyle]="style" alt="Image not found..." (dragstart)="onDragStart($event)"

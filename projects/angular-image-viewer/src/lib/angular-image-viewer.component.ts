@@ -138,17 +138,14 @@ export class AngularImageViewerComponent implements OnInit, OnChanges {
   }
 
   onLoad(url) {
-    console.log('Loading Image Done:', url);
     this.loading = false;
   }
 
   onLoadStart(url) {
-    console.log('Loading Image:', url);
     this.loading = true;
   }
 
   imageNotFound(url) {
-    console.log('Image not found Url:', url);
   }
 
   onDragOver(evt) {

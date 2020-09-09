@@ -11,17 +11,6 @@ export class FullScreenDirective implements OnChanges, OnInit {
   constructor(private el: ElementRef) { }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('fullscreenState isFirstChange:', changes["fullscreenState"].isFirstChange());
-    console.log('fullscreenState', this.fullscreenState);
-    // if (screenfull.isEnabled) {
-    //   screenfull.toggle(this.el.nativeElement);
-    // }
-    // if (this.fullscreenState && screenfull.isEnabled) {
-    //   screenfull.request(this.el.nativeElement);
-    // } else if (screenfull.isEnabled) {
-    //   screenfull.exit();
-    // }
-
     // tslint:disable-next-line: no-string-literal
     if (!changes['fullscreenState'].isFirstChange()) {
 
@@ -45,7 +34,7 @@ export class FullScreenDirective implements OnChanges, OnInit {
         if (requestMethod) { // Native Cancel full screen.
           requestMethod.call(element);
         } else {
-          console.log('FullScreen Cancel Request Method Not Supported on this browser.');
+          console.error('Angular Image Viewer: FullScreen Cancel Request Method Not Supported on this browser.');
         }
       }
     }
