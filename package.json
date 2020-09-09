@@ -1,5 +1,5 @@
 {
-  "name": "angular-image-viewer",
+  "name": "@keith.dimatteo/angular-image-viewer",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
@@ -52,7 +52,7 @@
     "tslint": "~5.15.0",
     "typescript": "~3.7.5"
   },
-  "description": "A configurable Angular image viewer component, compatible with Angular 7.x+",
+  "description": "A configurable Angular image viewer component, compatible with Angular 8",
   "main": "karma.conf.js",
   "repository": {
     "type": "git",
