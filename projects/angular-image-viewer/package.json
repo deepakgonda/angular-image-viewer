@@ -1,6 +1,6 @@
 {
   "name": "@hreimer/angular-image-viewer",
-  "version": "0.9.5",
+  "version": "0.11.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/hreimer/angular-image-viewer.git"
@@ -8,13 +8,13 @@
   "author": "Heinrich Reimer <heinrich.reimer@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^9.0.0",
-    "@angular/core": "^9.0.0"
+    "@angular/common": "^11.1",
+    "@angular/core": "^11.1"
   },
   "optionalDependencies": {
-    "font-awesome": "^4.7.0",
-    "@angular/cdk": "^9.2.3",
-    "@angular/material": "^9.2.3"
+    "font-awesome": "^5.15.0",
+    "@angular/cdk": "^11.1",
+    "@angular/material": "^11.1"
   },
   "keywords": [
     "ngx-image-viewer",
