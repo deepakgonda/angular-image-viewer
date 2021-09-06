@@ -1,10 +1,10 @@
 
 # Angular Image Viewer
 
-A configurable Angular image viewer component, compatible with Angular 9.x+ 
+A configurable Angular image viewer component, compatible with Angular 11.x+ 
 
 ## Features:
- * Compatible with Angular 9.x+
+ * Compatible with Angular 11.x+
  * Configurable
  * Rotate image
  * Zoom image
@@ -72,35 +72,35 @@ The configuration object is structured as below. All values are optional, and if
   },
   btnIcons: {                       // The icon classes that will apply to the buttons. By default, font-awesome is used.
     zoomIn: {
-      classes: 'fa fa-plus',        // this property will be used for FontAwesome and other libraries to set the icons via the classes - choose one: classes or text
+      classes: 'fas fa-plus',        // this property will be used for FontAwesome and other libraries to set the icons via the classes - choose one: classes or text
       text: 'zoom_in'               // this property will be used for Material-Icons and similar libraries to set the icons via the text
     },
     zoomOut: {
-      classes: 'fa fa-minus',
+      classes: 'fas fa-minus',
       text: 'zoom_out'
     },
     rotateClockwise:  {
-      classes: 'fa fa-repeat',
+      classes: 'fas fa-repeat',
       text: 'rotate_right'
     },
     rotateCounterClockwise:  {
-      classes: 'fa fa-undo',
+      classes: 'fas fa-undo',
       text: 'rotate_left'
     },
     next:  {
-      classes: 'fa fa-arrow-right',
+      classes: 'fas fa-arrow-right',
       text: 'arrow_right'
     },
     prev:  {
-      classes: 'fa fa-arrow-left',
+      classes: 'fas fa-arrow-left',
       text: 'arrow_left'
     },
     fullscreen:  {
-      classes: 'fa fa-arrows-alt',
+      classes: 'fas fa-arrows-alt',
       text: 'fullscreen'
     },
     reset:  {
-      classes: 'fa fa-undo',
+      classes: 'fas fa-undo',
       text: 'restore'
     }
   }
@@ -116,7 +116,7 @@ To add additional buttons use the following
                       {
                         name: 'link',
                         icon: {
-                          classes: 'fa fa-paperclip',
+                          classes: 'fas fa-paperclip',
                           text: 'link'
                         }
                       }
